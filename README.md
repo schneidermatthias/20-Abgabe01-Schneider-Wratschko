@@ -15,5 +15,5 @@ The point of this project is to make various Drinks. In our template we have the
 
 ## Further Implemantation
 
-For our subclass, we chose to make a ```Cocktail```class, which extends ```Drinks```. Cocktails are very complex drinks with a wide varierty of different ingredients. So we decided to add these ingredients into an ArrayList ```ìngredients```. It is also important if the cocktail is alcolic or non-alcohloic, so we gave it a boolean ```alcoholic```. Last but not least, we wanted to let the user decide between "stirred or shaken" - like James Bond.
+For our subclass, we chose to make a ```Cocktail```class, which extends ```Drinks```. Cocktails are very complex drinks with a wide varierty of different ingredients. So we decided to add these ingredients into an ArrayList ```ingredients```. It is also important if the cocktail is alcolic or non-alcohloic, so we gave it a boolean ```alcoholic```. Last but not least, we wanted to let the user decide between "stirred or shaken" - like James Bond.
 
