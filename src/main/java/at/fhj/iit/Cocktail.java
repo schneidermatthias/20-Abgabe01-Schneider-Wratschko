@@ -25,7 +25,7 @@ public class Cocktail extends Drink {
      * @param bigCockatil either a big (1l) or small (0.5l)cocktail
      * constructor with parameters from class
 	 */
-	
+
 	public Cocktail(String name, Liquid liquidType, boolean shaken, ArrayList<String> ingredients,boolean bigCockatil) {
 		super(name);
 		this.name = name;
@@ -41,8 +41,8 @@ public class Cocktail extends Drink {
 	 */
 
 	public void printIngredients(){
-        for (int i = 0; i < ingredients.size(); i++) {
-            System.out.println(ingredients.get(i));
+        for (String ingredient : ingredients) {
+            System.out.println(ingredient);
         }
 
     }
