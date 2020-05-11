@@ -5,14 +5,14 @@ import java.util.ArrayList;
 /**
  * Class represents a Cocktail which extends drinks
  * @author Matthias
- * @author Vinzen
- * @version 1.1
+ * @author Vinzenz
+ * @version 1.2
  */
 
 public class Cocktail extends Drink {
 
 	boolean shaken;
-	Liquid liquidType;
+	private ArrayList<Liquid> liquid;
 	ArrayList<String> ingredients = new ArrayList<String>();
 	boolean bigCockatil;
 
@@ -22,14 +22,14 @@ public class Cocktail extends Drink {
 	 * @param name name of the cockatil
 	 * @param liquidType represents an Object of Liquid
 	 * @param ingredients List with ingredients of cocktail
-     * @param bigCockatil either a big (1l) or small (0.5l)cocktail
+     * @param bigCockatil doubles the volume
      * constructor with parameters from class
 	 */
 	
-	public Cocktail(String name, Liquid liquidType, boolean shaken, ArrayList<String> ingredients,boolean bigCockatil) {
+	public Cocktail(String name, ArrayList<Liquid> liquid, boolean shaken, ArrayList<String> ingredients,boolean bigCockatil) {
 		super(name);
 		this.name = name;
-		this.liquidType = liquidType;
+		this.liquid = liquid;
 		this.shaken = shaken;
 		this.ingredients= ingredients;
 		this.bigCockatil = bigCockatil;
@@ -40,11 +40,12 @@ public class Cocktail extends Drink {
 	 * 
 	 */
 
-	public void printIngredients(){
-        for (int i = 0; i < ingredients.size(); i++) {
-            System.out.println(ingredients.get(i));
+	public String getIngredients(){
+		String a = "";
+       	for (int i = 0; i < ingredients.size(); i++) {
+            a += ingredients.get(i) + " ";
         }
-
+	return a;
     }
 
 	/**
@@ -74,7 +75,15 @@ public class Cocktail extends Drink {
 	 */
 	@Override
 	public double getVolume() {
-		return bigCockatil?1d:0.5d;
+		double volume = 0;
+		for (Liquid liquid : liquid) {
+			volume += liquid.getVolume();
+		}
+		if (bigCockatil == true) {
+			return volume * 2;
+		}
+
+		return volume;
 	}
 
 	/**
@@ -83,8 +92,11 @@ public class Cocktail extends Drink {
 	 */
 	@Override
 	public double getAlcoholPercent() {
-
-		return liquidType.getAlcoholPercent();
+		double percentage = 0;
+		for(int i=0;i<liquid.size();i++){
+            		percentage += (liquid.get(i).getVolume() *1000) / liquid.get(i).getAlcoholPercent();
+       		}
+        	return Math.floor(percentage);
 	}
 
 	/**
@@ -94,7 +106,7 @@ public class Cocktail extends Drink {
 	@Override
 	public boolean isAlcoholic() {
 
-		return liquidType.getAlcoholPercent() > 0;
+		return getAlcoholPercent() > 0 ? true : false;
 
 	}
 }
