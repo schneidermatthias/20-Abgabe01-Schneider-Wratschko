@@ -1,9 +1,14 @@
 package at.fhj.iit;
 
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
+
+import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 
 
 @DisplayName ("Testing Cocktail implementation")
@@ -11,7 +16,7 @@ class CocktailTest {
 
     private Cocktail shake,stirred;
     private ArrayList<Liquid> liq1, liq2;
-    private ArrayList<String> ing1 = new ArrayList<String>();
+    private ArrayList<String> ing1, ing2;
 
     /**
      * inits liquid List and ingrediants List for each cocktail
