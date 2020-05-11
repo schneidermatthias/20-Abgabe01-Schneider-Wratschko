@@ -71,7 +71,7 @@ class CocktailTest {
 	@DisplayName("Testing getAlcoholPercent: ")
 	public void TestgetAlcoholPercent() {
 		assertEquals(29, shake.getAlcoholPercent());
-//		assertEquals(0,stirred.getAlcoholPercent());
+		assertEquals(0,stirred.getAlcoholPercent());
 
 	}
 

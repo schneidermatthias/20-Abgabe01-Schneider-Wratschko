@@ -93,7 +93,11 @@ public class Cocktail extends Drink {
 	@Override
 	public double getAlcoholPercent() {
 		double percentage = 0;
+
 		for(int i=0;i<liquid.size();i++){
+			if (liquid.get(i).getAlcoholPercent()==0){
+				return 0;
+			}
 			percentage += (liquid.get(i).getVolume() *1000) / liquid.get(i).getAlcoholPercent();
 		}
 		return Math.floor(percentage);
