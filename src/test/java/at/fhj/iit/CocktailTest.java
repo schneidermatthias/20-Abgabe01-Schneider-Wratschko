@@ -1,13 +1,12 @@
 package at.fhj.iit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Testing Cocktail implementation")
 class CocktailTest {
@@ -59,7 +58,7 @@ class CocktailTest {
 	public void Testifitsalcohol() {
 //		assertEquals(true,shake.isAlcoholic());
 		assertTrue(shake.isAlcoholic());
-		assertTrue(stirred.isAlcoholic());
+		assertFalse(stirred.isAlcoholic());
 
 	}
 
@@ -81,7 +80,7 @@ class CocktailTest {
 
 	@Test
 	@DisplayName("Testing volume")
-	public void checkVolume() {
+	public void TestcheckVolume() {
 		assertEquals(1.2, shake.getVolume());
 		assertEquals(0.5, stirred.getVolume());
 	}
