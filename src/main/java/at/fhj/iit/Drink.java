@@ -17,6 +17,14 @@ public abstract class Drink {
     public Drink(String name) {
         this.name = name;
     }
+    
+    /**
+    * @return the name of drink
+    */
+    public String getName() {
+        return name;
+    }
+    
     /**
      * Calculates and returns volume of drink
      *
