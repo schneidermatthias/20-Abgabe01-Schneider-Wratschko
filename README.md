@@ -17,3 +17,25 @@ The point of this project is to make various Drinks. In our template we have the
 
 For our subclass, we chose to make a ```Cocktail```class, which extends ```Drinks```. Cocktails are very complex drinks with a wide varierty of different ingredients. So we decided to add these ingredients into an ArrayList ```ingredients```. It is also important if the cocktail is alcolic or non-alcohloic, so we gave it a boolean ```alcoholic```. Last but not least, we wanted to let the user decide between "stirred or shaken" - like James Bond.
 
+```java
+	/**
+	 * @param shakenNotStirred method, which asks the user, if is a fan of James Bond
+	 * @throws JamesBondException if not shaken
+	 */
+	public void shakenNotStirred(boolean shaken) throws JamesBondException{
+		try {
+			if(!shaken){
+				throw new JamesBondException("Mr. Bond wouldn't be satisfied");
+			}
+			else{
+				System.out.println("Like the good old Mr. Bond");
+
+			}
+
+		}
+		catch (JamesBondException ignored){
+
+		}
+
+	}
+```
