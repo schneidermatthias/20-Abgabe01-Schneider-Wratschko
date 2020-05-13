@@ -49,15 +49,16 @@ public class Cocktail extends Drink {
 	}
 
 	/**
-	 * @param shaken method, which asks the user, if is a fan of James Bond
+	 * @param shaken describes if Cocktail is shaken
 	 * @throws JamesBondException if not shaken
+	 * method gives user a message from James Bond
 	 */
 	public void shakenNotStirred(boolean shaken) throws JamesBondException{
 			if(!shaken){
 				throw new JamesBondException("Mr. Bond wouldn't be satisfied");
 			}
 			else{
-				System.out.println("Like the good old Mr. Bond");
+				System.out.println("Mr. Bond would be satisfied");
 			}
 		}	
 	/**
