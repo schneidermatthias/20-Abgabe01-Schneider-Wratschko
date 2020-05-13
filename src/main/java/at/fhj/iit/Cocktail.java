@@ -54,13 +54,13 @@ public class Cocktail extends Drink {
 	 * method gives user a message from James Bond
 	 */
 	public void shakenNotStirred(boolean shaken) throws JamesBondException{
-			if(!shaken){
-				throw new JamesBondException("Mr. Bond wouldn't be satisfied");
-			}
-			else{
-				System.out.println("Mr. Bond would be satisfied");
-			}
-		}	
+		if(!shaken){
+			throw new JamesBondException("Mr. Bond wouldn't be satisfied");
+		}
+		else{
+			System.out.println("Mr. Bond would be satisfied");
+		}
+	}
 	/**
 	 *
 	 * @return volume of the Drink Overriding getvolume() method
@@ -105,7 +105,6 @@ public class Cocktail extends Drink {
 	public boolean isAlcoholic() {
 
 		return getAlcoholPercent() > 0;
-
 	}
 }
 
