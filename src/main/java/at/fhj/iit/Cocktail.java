@@ -18,10 +18,10 @@ public class Cocktail extends Drink {
 
 	/**
 	 *
-	 * @param shaken describes if cocktail is shaken
 	 * @param name name of the cockatil
-	 * @param liquidType represents an Object of Liquid
-	 * @param ingredients List with ingredients of cocktail
+	 * @param liquid represents an list of Liquid objects
+	 * @param shaken describes if cocktail is shaken
+	 * @param ingredients list with ingredients of cocktail
 	 * @param bigCockatil doubles the volume
 	 * constructor with parameters from class
 	 */
@@ -70,7 +70,7 @@ public class Cocktail extends Drink {
 		for (Liquid liquid : liquid) {
 			volume += liquid.getVolume();
 		}
-		if (bigCockatil == true) {
+		if (bigCockatil) {
 			return volume * 2;
 		}
 
@@ -103,7 +103,7 @@ public class Cocktail extends Drink {
 	@Override
 	public boolean isAlcoholic() {
 
-		return getAlcoholPercent() > 0 ? true : false;
+		return getAlcoholPercent() > 0;
 
 	}
 }
