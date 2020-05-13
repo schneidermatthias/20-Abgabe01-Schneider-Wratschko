@@ -92,8 +92,8 @@ class CocktailTest {
 	@Test
 	@DisplayName("Testing exception")
 	public void checkException() throws JamesBondException {
-//		assertThrows("Mr. Bond wouldn't be satisfied", shake.shakenNotStirred(false));
-
+		shake.shakenNotStirred(shake.shaken);
+		stirred.shakenNotStirred(stirred.shaken);
 	}
 
 }
