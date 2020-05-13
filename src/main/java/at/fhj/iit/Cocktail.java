@@ -53,22 +53,13 @@ public class Cocktail extends Drink {
 	 * @throws JamesBondException if not shaken
 	 */
 	public void shakenNotStirred(boolean shaken) throws JamesBondException{
-		try {
 			if(!shaken){
 				throw new JamesBondException("Mr. Bond wouldn't be satisfied");
 			}
 			else{
 				System.out.println("Like the good old Mr. Bond");
-
 			}
-
-		}
-		catch (JamesBondException ignored){
-
-		}
-
-	}
-
+		}	
 	/**
 	 *
 	 * @return volume of the Drink Overriding getvolume() method
